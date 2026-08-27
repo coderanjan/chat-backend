@@ -61,8 +61,9 @@ io.on('connection',(socket)=>{
     })
 
     socket.on('disconnect',()=>{
-       
+       if(socket.username){
         io.emit('user-left',socket.username)
+       }
 
         
         
